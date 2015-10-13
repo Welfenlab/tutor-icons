@@ -43,7 +43,7 @@ var createIcons = function(name) {
         }
         im.convert(merge(sizes.map(function(size) {
           return 'production/tmp/' + name + '-' + size + '.png';
-        }), ['-alpha', 'on', 'production/ico/' + name + '.ico']), function(err) {
+        }), ['-alpha', 'on', 'production/' + name + '/favicon.ico']), function(err) {
           if (err) {
             reject(err);
           } else {
@@ -58,11 +58,11 @@ var createIcons = function(name) {
   };
 
   return [
-    png('production/png/' + name + '/original.png'),
-    png('production/png/' + name + '/icon-57.png', scaleTo(57)),
-    png('production/png/' + name + '/icon-72.png', scaleTo(72)),
-    png('production/png/' + name + '/icon-114.png', scaleTo(114)),
-    png('production/png/' + name + '/icon-160.png', scaleTo(160)),
+    png('production/' + name + '/original.png'),
+    png('production/' + name + '/icon-57.png', scaleTo(57)),
+    png('production/' + name + '/icon-72.png', scaleTo(72)),
+    png('production/' + name + '/icon-114.png', scaleTo(114)),
+    png('production/' + name + '/icon-160.png', scaleTo(160)),
     favicon([16, 32, 48, 64])
   ]
 };
